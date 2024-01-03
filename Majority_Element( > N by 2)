@@ -1,0 +1,26 @@
+Understanding:  Majority elements are those elements that repeats in an array more than > (N / 2) times
+
+
+// Better solution : we use Hashmap for this so as to assign elements/integers in an array as key and count as value and if value > N/2 then it returns key 
+which is majority element.
+
+//code
+
+class Solution {
+public:
+    int majorityElement(vector<int> v) {
+        map<int,int>mpp;
+        for(int i=0;i<v.size();i++)
+        {
+            mpp[v[i]]++;
+        }
+        for(auto it: mpp)
+        {
+            if(it.second>(v.size()/2))
+            {
+                return it.first;
+            }
+        }
+        return -1;
+    }
+};
