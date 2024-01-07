@@ -1,0 +1,48 @@
+//spiral order matrix II using vector
+
+/*
+  ^
+  |------------->
+  |            |
+  |   Spiral   |
+  |            |
+  |            |
+<--------------|
+
+*/
+vector<vector<int> > Solution::generateMatrix(int a) {
+    vector<vector<int> > ans(a,vector<int> (a));
+    int rows=0,rowe=a-1,cols=0,cole=a-1,count=1;
+    while(rows<=rowe&&cols<=cole)
+    {
+        for(int i=cols;i<=cole;i++)
+        {
+            ans [rows][i]=count++;
+        }
+        rows++;
+        
+        for(int i=rows;i<=rowe;i++)
+        {
+            ans [i][cole]=count++;
+        }
+        cole--;
+        if(cols<=cole)
+        {
+            for(int i=cole;i>=cols;i--)
+            {
+                ans[rowe][i]=count++;
+            }
+            rowe--;
+        }
+        if(rows<=rowe)
+        {
+            
+            for(int i=rowe;i>=rows;i--)
+            {
+                ans[i][cols]=count++;
+            }
+            cols++;
+        }
+    }
+    return ans;
+}
