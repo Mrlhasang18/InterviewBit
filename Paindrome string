@@ -1,0 +1,39 @@
+Palindrome means same from the last and same from the first.
+for example: racecar, madam,etc.
+
+
+soln/code:
+
+int Solution::isPalindrome(string a) {
+    
+    string str;
+    if(a.size()==0) return 1;
+    
+    int sz = a.size();
+    for(int i=0;i<sz;i++)     //for loop for inserting the given alphanumeric i/p
+    {
+        char c = a[i];
+        if((c>='0'&&c<='9')||(c>='A'&&c<='Z')||(c>='a'&&c<='z'))
+        {
+            if((c>='A'&&c<='Z'))
+            {
+                c=((char)(c+32));
+            }
+            str.push_back(c);
+        }
+    }
+    int i=0,j=str.size()-1;
+    
+    while(i<j)
+    {
+        if(str[i]==str[j])        //checking whether the first and last , second and second last ,and soon are equal or not.
+        {
+            i++;
+            j--;
+        }
+        else{
+            return 0;
+        }
+    }
+    return 1;
+}
