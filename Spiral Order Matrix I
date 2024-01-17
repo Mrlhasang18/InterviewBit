@@ -1,0 +1,44 @@
+
+code:
+
+vector<int> Solution::spiralOrder(const vector<vector<int>>& A) {
+int m = A.size();
+int n = A[0].size();
+vector<int> ans;
+
+int rs = 0, cs = 0;
+int re = m - 1;
+int ce = n - 1;
+
+while (rs <= re && cs <= ce) {
+// Traverse right
+for (int i = cs; i <= ce; i++) {
+ans.push_back(A[rs][i]);
+}
+rs++;
+
+// Traverse down
+for (int i = rs; i <= re; i++) {
+ans.push_back(A[i][ce]);
+}
+ce--;
+
+if (rs <= re) {
+// Traverse left
+for (int i = ce; i >= cs; i--) {
+ans.push_back(A[re][i]);
+}
+re--;
+}
+
+if (cs <= ce) {
+// Traverse up
+for (int i = re; i >= rs; i--) {
+ans.push_back(A[i][cs]);
+}
+cs++;
+}
+}
+
+return ans;
+}
