@@ -42,3 +42,15 @@ cs++;
 
 return ans;
 }
+
+explanation:
+It implements a function named spiralOrder that takes a 2D vector (matrix) A as input and returns a 1D vector representing the elements of the matrix in spiral order.
+The idea is to traverse the matrix in a spiral fashion, starting from the top-left corner and moving right, down, left, and up, in a cycle until all elements are 
+visited.
+
+Let's break down the code:
+The four loops inside the while loop correspond to moving right, down, left, and up, respectively. The rs, cs, re, and ce variables keep track of the
+boundaries of the current spiral layer. The while loop continues until the boundaries meet or cross each other, ensuring that all elements are visited 
+in the correct order.
+
+This algorithm has a time complexity of O(m * n), where 'm' is the number of rows and 'n' is the number of columns in the matrix.
