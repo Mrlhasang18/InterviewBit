@@ -1,6 +1,6 @@
 Q.Pretty Print:
 
-
+soln:
 vector<vector<int> > Solution::prettyPrint(int A) {
     int n = 2*A-1;
 vector<vector<int>>v(n,vector(n,A));
