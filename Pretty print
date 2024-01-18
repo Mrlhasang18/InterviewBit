@@ -17,3 +17,29 @@ v[n-j-1][n-i-1] = A-i;
 
 return v;
 }
+
+explanation:
+The variable n is calculated as 2 * A - 1, representing the dimension of the square matrix.
+
+The vector<vector<int>> v(n, vector<int>(n, A)); initializes a 2D vector v with dimensions n x n. All elements in 
+the matrix are initialized with the value of A.
+
+The nested loops iterate over the layers of the matrix, starting from the outermost layer and moving towards the 
+center. The outer loop (for (int i = 0; i < A; i++)) iterates over the layers, and the inner loop
+(for (int j = i; j < n - i; j++)) iterates within each layer.
+
+Within the inner loop, the values in the matrix are updated based on the pretty print pattern.
+The elements in the current layer are set to the value of A - i, effectively decreasing from the outer layer 
+towards the center.
+
+v[i][j] = A - i;: Update elements in the top row of the current layer.
+v[j][i] = A - i;: Update elements in the leftmost column of the current layer.
+v[n - i - 1][j] = A - i;: Update elements in the bottom row of the current layer.
+v[n - j - 1][n - i - 1] = A - i;: Update elements in the rightmost column of the current layer.
+The resulting 2D vector represents a symmetric pattern with decreasing values from the outer layers towards 
+the center, creating a visually appealing "pretty print" pattern.
+
+The generated matrix is then returned.
+
+This algorithm has a time complexity of O(A^2) since it involves nested loops that iterate over the elements of the
+matrix.
