@@ -20,3 +20,41 @@ for (int i = 0; i < B.size(); i++) {
     for (int j = 0; j < B[i].size(); j++) cout<<B[i][j]<<" ";
 }
 
+output:
+4 3 2 1 
+8 7 6 5 
+12 11 10 9
+
+explanation:
+Input Matrix A:
+[[1, 2, 3, 4],
+ [5, 6, 7, 8],
+ [9, 10, 11, 12]]
+
+Operation Performed in performOps Function:
+
+For each row in A, a new row is created in B.
+The values of each row in B are the reverse of the corresponding row in A.
+
+Output Matrix B:
+[[4, 3, 2, 1],
+ [8, 7, 6, 5],
+ [12, 11, 10, 9]]
+
+Explanation of the Given Call to Print Elements:
+
+The outer loop iterates over each row of matrix B.
+The inner loop iterates over each element in the current row of matrix B.
+Each element is printed with a space, and a newline character is added after each row for better readability.
+
+Correct Output Format:
+4 3 2 1 
+8 7 6 5 
+12 11 10 9
+So, the corrected output of the given call to print the elements of matrix B is as mentioned above.
+Each row of the matrix is printed on a new line.
+
+
+
+
+
