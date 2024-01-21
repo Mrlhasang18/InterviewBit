@@ -20,3 +20,45 @@ vector<int> Solution::rotateArray(vector<int> &A, int B) {
 	}
 	return ret; 
 }
+
+explanation:
+
+
+The given code defines a function rotateArray that takes a vector of integers A and an integer B as parameters.
+The function rotates the elements of the input vector to the right by a specified number of positions (B). 
+The rotation is performed using a simple modulo operation to handle cases where the rotation count exceeds the
+length of the vector.
+
+Here's a step-by-step explanation of the code:
+
+Function Signature:
+
+vector<int> Solution::rotateArray(vector<int> &A, int B)
+
+The function rotateArray takes a reference to a vector of integers A and an integer B representing the number of 
+positions to rotate.
+Initialization:
+
+vector<int> ret;
+A new vector ret is declared to store the rotated elements.
+Rotation Loop:
+
+for (int i = 0; i < A.size(); i++) {
+    ret.push_back(A[(i + B) % A.size()]);
+}
+
+The loop iterates through each element of the original vector A.
+For each element at index i, it calculates the new index using (i + B) % A.size(). 
+The % A.size() ensures that the index wraps around to the beginning if it exceeds the size of the vector.
+The element at the newly calculated index is pushed to the ret vector.
+Return:
+
+return ret;
+
+The rotated vector ret is returned.
+Example:
+Suppose A = [1, 2, 3, 4, 5] and B = 2. Calling rotateArray(A, B) would result in the vector [4, 5, 1, 2, 3]. 
+Each element is shifted to the right by 2 positions.
+
+Keep in mind that this implementation rotates the elements to the right. If you need left rotation, you can
+modify the formula to (i + A.size() - B) % A.size()
