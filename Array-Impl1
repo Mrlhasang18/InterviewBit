@@ -18,3 +18,5 @@ for (int i = 0; i < B.size(); i++) {
     cout<<B[i]<<" ";
 }
 
+output: 5 1 10 2 2 10 1 5
+explanation:
