@@ -20,3 +20,49 @@ for (int i = 0; i < B.size(); i++) {
 
 output: 5 1 10 2 2 10 1 5
 explanation:
+
+Let's break down the given code and then determine the output for the provided input vector A = [5, 10, 2, 1].
+
+cpp
+Copy code
+vector<int> performOps(vector<int> A) {
+    vector<int> B(2 * A.size(), 0);
+    for (int i = 0; i < A.size(); i++) {
+        B[i] = A[i];
+        B[i + A.size()] = A[(A.size() - i) % A.size()];
+    }
+    return B;
+}
+The performOps function takes a vector A as input and performs a series of operations to create a new vector B. 
+The elements of B are filled based on specific patterns using the elements of A.
+
+Now, let's calculate the output for the given input A = [5, 10, 2, 1]:
+
+Initialize Vector B:
+
+vector<int> B(2 * A.size(), 0);
+A new vector B is created with twice the size of vector A, and all elements are initialized to 0.
+Fill Vector B in the Loop:
+
+for (int i = 0; i < A.size(); i++) {
+    B[i] = A[i];
+    B[i + A.size()] = A[(A.size() - i) % A.size()];
+}
+The loop iterates through each element of vector A.
+For each element at index i, it assigns A[i] to B[i].
+It also assigns A[(A.size() - i) % A.size()] to B[i + A.size()]. This involves reversing the elements of A and 
+wrapping around using modulo.
+Print Vector B:
+
+vector<int> B = performOps(A);
+for (int i = 0; i < B.size(); i++) {
+    cout << B[i] << " ";
+}
+The output will be printed using cout in a single line.
+
+Now, let's calculate the output for the given input A = [5, 10, 2, 1]:
+
+The vector B after the operations will be: [5, 1, 10, 2, 2, 10, 1, 5].
+The output of the given code would be:
+
+5 1 10 2 2 10 1 5
