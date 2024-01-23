@@ -80,3 +80,53 @@ vector<int> Solution::maxset(vector<int> &A) {
    
     return max_ans;
 }
+
+
+explanation:
+
+Initialization:
+
+long int max_sum = -1, sum = 0;
+vector<int> max_ans, ans;
+max_sum stores the maximum sum found so far.
+sum keeps track of the current sum of the subarray being processed.
+max_ans stores the elements of the subarray with the maximum sum.
+ans is used to build the current subarray being considered.
+Loop through the Input Vector:
+
+for (auto val : A) {
+    // ...
+}
+The loop iterates through each element of the input vector A.
+Check for Negative Values:
+
+
+if (val < 0) {
+    // ...
+}
+If the current element is negative, it means the current subarray ends.
+The code checks if the current sum is greater than the maximum sum found so far.
+If true, it updates max_sum and copies the elements of the current subarray to max_ans.
+It resets sum to 0 and clears the ans vector to start building a new subarray.
+Handle Positive Values:
+
+
+sum += val;
+ans.push_back(val);
+If the current element is non-negative, it is added to the current sum (sum).
+The element is also added to the ans vector, representing the current subarray.
+Right Boundary Case:
+
+if (sum > max_sum) {
+    max_sum = sum;
+    max_ans = ans;
+}
+After the loop, there might be a valid subarray that extends to the right boundary.
+This block checks if the last subarray has a sum greater than the maximum sum found so far.
+Return the Result:
+
+return max_ans;
+The function returns the vector max_ans, which contains the elements of the subarray with the maximum non-negative
+sum.
+In summary, the code efficiently finds the subarray with the maximum non-negative sum in a given vector, handling
+negative values and multiple subarrays.
