@@ -1,62 +1,26 @@
-This is the simplest way to find a factorial of a very large number.
 
-This is c++ solution.
-#include<bits/stdc++.h>
+soln:
+string Solution::solve(int A) {
+    vector<int> d;
+    d.push_back(1);
 
-string Solution::solve(int a) {
+    for(int i=2;i<=A;i++){
+        for(auto it=d.begin();it!=d.end();it++){
+            *it = (*it) * i;
+        }
+        for(int j=0;j<d.size();j++){
+            if(d[j]<10){continue;}
+            if(j==d.size()-1){d.push_back(0);}
+            d[j+1] += d[j]/10;
+            d[j] = d[j]%10;
+        }
+    }
 
-//This vector is going to store the numbers in from 0-9 in each block
-
-vector<int> v(1);
-
-v[0]=1;
-
-int x=2;
-
-while(x<=a){
-
-int carry=0;
-
-//This for loop multiple the elements with next number
-
-for(int i=0;i<v.size();i++){
-
-int temp=v[i]*x+carry;
-
-v[i] = temp%10;
-
-carry = temp/10;
-
-}
-
-//This will store carry into the next vector location
-
-while(carry>0){
-
-v.push_back(carry%10);
-
-carry/=10;
-
-}
-
-x++;
-
-}
-
-//ostringstream is used to convert vector into string in best time comlexity
-
-ostringstream s;
-
-reverse(v.begin(), v.end());
-
-if (!v.empty()) {
-
-std::copy(v.begin(), v.end() - 1,ostream_iterator<int>(s, “”));
-
-s << v.back();
-
-}
-
-return s.str();
-
+    //storing array into string
+    string s;
+    for(auto it=d.rbegin();it!=d.rend();it++){
+        auto c = std::to_string(*it);
+        s.append(c);
+    }
+    return s;
 }
