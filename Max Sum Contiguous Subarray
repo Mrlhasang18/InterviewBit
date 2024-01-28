@@ -1,1 +1,12 @@
+soln:
 
+int Solution::maxSubArray(const vector<int> &A) {
+    int prev=A[0];
+    int n=A.size();
+    int maxi=prev;
+    for(int i=1;i<n;i++){
+        prev=max(A[i],prev+A[i]);
+        maxi=max(maxi,prev);
+    }
+    return maxi;
+}
