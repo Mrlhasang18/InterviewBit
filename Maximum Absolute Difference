@@ -36,4 +36,17 @@ The maximum value is 5, which is of f(2, 3)
 
 
 soln:
-
+int Solution::maxArr(vector<int> &A) {
+    vector<int>plus,minus;
+    for(int i=0;i<A.size();i++){
+        int val=A[i]+i+1;
+        int vall=A[i]-(i+1);
+        plus.push_back(val);
+        minus.push_back(vall);
+    }
+    sort(plus.begin(),plus.end());
+    sort(minus.begin(),minus.end());
+    int v1=plus[plus.size()-1]-plus[0];
+    int v2=minus[minus.size()-1]-minus[0];
+    return max(v1,v2);
+}
