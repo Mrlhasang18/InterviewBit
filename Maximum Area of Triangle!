@@ -59,6 +59,11 @@ Explanation 2:
  All cells have same color so no triangle possible so we will return 0
 
 
+
+
+
+soln/code:
+
 int Solution::solve(vector<string> &A) {
     int n = A.size(), m = A[0].size();
     map<char, int> mxr[m], mnr[m], mxc, mnc;
