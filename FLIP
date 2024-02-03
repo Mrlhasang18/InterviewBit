@@ -1,1 +1,30 @@
 
+vector<int> Solution::flip(string A) {
+    int i=-1;
+    int j=-1;
+    int summ = 0;
+    int start = 0;
+   
+    int mxSum = 0;
+    for(int k=0;k<A.size();k++){
+       
+        if (A[k] == '1') summ--;
+        else summ++;
+       
+        if (summ < 0){
+            summ = 0;
+            start = k+1;
+        }
+        if (summ > mxSum){
+            mxSum = summ;
+            i=start;
+            j=k;
+        }
+    }
+    vector<int> res;
+    if (i==-1) return res;
+    else {
+        res = {i+1,j+1};
+        return res;
+    }
+}
