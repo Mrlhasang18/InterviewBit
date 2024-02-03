@@ -1,4 +1,4 @@
-
+soln:
 vector<int> Solution::flip(string A) {
     int i=-1;
     int j=-1;
