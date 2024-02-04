@@ -50,6 +50,8 @@ Explanation 2:
 Explained in the description above.
 
 
+soln/code:
+
 vector<int> Solution::findOccurences(vector<int> &A){
  map<int,int> m;
  //sort(A.begin(),A.end());
