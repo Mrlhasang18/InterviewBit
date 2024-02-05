@@ -1,1 +1,24 @@
+int Solution::solve(vector<int> &A) {
+
+    sort(A.begin(),A.end());
+
+    int sizee=A.size(),flag=0;
+
+    for(int i=1;i<sizee;i++)
+
+    {
+
+        if((A[i-1])==sizee-1-(i-1)&&A[i]!=A[i-1])
+
+        return 1;   
+
+    }
+
+    if(A[sizee-1]==0) return 1;
+
+    return -1;
+
+}
+
+
 
