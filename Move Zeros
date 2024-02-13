@@ -1,1 +1,12 @@
 
+vector<int> Solution::solve(vector<int> &A) {
+    int i=0;
+    int n=A.size();
+    for(int j=0;j<n;j++){
+        if(A[j]!=0){
+            swap(A[j],A[i]);
+            i++;
+        }
+    }
+    return A;
+}
