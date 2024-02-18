@@ -1,1 +1,14 @@
 
+int check(vector<int>&v,int target,int B){
+    for(auto num:v)
+    if(num!=target and abs(num-target)!=B)return 0;
+    return 1;
+}
+int Solution::solve(vector<int> &A, int B) {
+    return check(A,A[0]+B,B) |
+    check(A,A[0],B) | check(A,A[0]-B,B);
+}
+/* Iterate over the array to check if all elements
+can be made equal to the A[0] (first element), or
+A[0]-B or A[0]+B. If either of them is possible,
+we return 1. */
