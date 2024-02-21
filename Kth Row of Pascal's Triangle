@@ -1,0 +1,30 @@
+double fact(int n){
+
+    double factorial=1;
+
+    for(int i=2; i<=n; i++){
+
+        factorial*=i;
+
+    }
+
+    return round(factorial);
+
+}
+
+
+vector<int> Solution::getRow(int A) {
+
+    vector<int> ans;
+
+    for(int i=0;i<=A;i++){
+
+        int ele=round((fact(A))/(fact(i)*fact(A-i)));
+
+        ans.push_back(ele);
+
+    }
+
+    return ans;
+
+}
