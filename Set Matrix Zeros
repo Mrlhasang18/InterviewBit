@@ -1,0 +1,31 @@
+void Solution::setZeroes(vector<vector<int> > &A) {
+    // Do not write main() function.
+    // Do not read input, instead use the arguments to the function.
+    // Do not print the output, instead return values as specified
+    // Still have a doubt. Checkout www.interviewbit.com/pages/sample_codes/ for more details
+ int nr = A.size();
+    int nc = A[0].size();
+    vector<int> r(nr,1);
+    vector<int> c(nc,1);
+    for(int i=0;i<nr;i++)
+    {
+        for(int j=0;j<nc;j++)
+        {
+            if(A[i][j]==0)
+            {
+                r[i]=0;
+                c[j]=0;
+            }
+        }
+    }
+    for(int i=0;i<nr;i++)
+    {
+        for(int j=0;j<nc;j++)
+        {
+            if(r[i]==0||c[j]==0)
+            {
+                A[i][j]=0;
+            }
+        }
+    }
+}
